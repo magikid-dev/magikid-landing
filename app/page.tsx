@@ -181,7 +181,7 @@ export default function Home() {
               ))}
             </ul>
             <p className="price">
-              Mise en place clé en main de 5 000 € à 25 000 € selon langues et volume · puis abonnement de production mensuel.
+              Tarif sur devis — adapté à vos langues, votre volume et votre budget · mise en place puis abonnement de production mensuel.
             </p>
           </div>
         </div>
