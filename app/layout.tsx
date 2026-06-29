@@ -38,11 +38,43 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
+    url: "https://magikid.online",
+    siteName: "Magikid",
     title: "Magikid — Studio de production jeunesse en marque blanche",
     description:
       "Des contes pour enfants finis et publiés chaque jour, à votre marque et dans vos langues. Pour ONG, éditeurs jeunesse et edtech.",
-    images: ["/magikid_1024x1024.png"],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Magikid — Studio de production jeunesse en marque blanche",
+    description:
+      "Des contes pour enfants finis et publiés chaque jour, à votre marque et dans vos langues.",
+  },
+  alternates: { canonical: "https://magikid.online" },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "Magikid",
+      url: "https://magikid.online",
+      logo: "https://magikid.online/magikid_1024x1024.png",
+      description:
+        "Studio de production de contes animés pour enfants en marque blanche : écriture, illustration, narration, montage et publication automatisés, à votre marque et dans vos langues.",
+      sameAs: [
+        "https://www.youtube.com/@magikid-k3j",
+        "https://www.tiktok.com/@magikid2",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      name: "Magikid",
+      url: "https://magikid.online",
+      inLanguage: "fr",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -52,7 +84,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

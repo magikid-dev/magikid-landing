@@ -30,6 +30,12 @@ const VALUE = [
   { icon: "copyright", title: "Le catalogue est à vous", text: "Vous restez propriétaire des contenus produits et des comptes de diffusion." },
 ];
 
+const FEATURED = [
+  { id: "ABVmFOEToqc", title: "Awa et le masque ancestral" },
+  { id: "gD25x8Bt_hY", title: "Saran et l'éclipse solaire" },
+  { id: "oy90GOthijU", title: "Leila retrouve la lumière" },
+];
+
 const OFFER = [
   "Direction artistique & personnages à votre identité",
   "Adaptation linguistique (dont langues africaines)",
@@ -150,9 +156,26 @@ export default function Home() {
           <p className="eyebrow">La preuve tourne déjà</p>
           <h2>Notre propre chaîne est la démo.</h2>
           <p className="lead">
-            Magikid fait tourner son propre studio en production réelle, en public, tous les jours.
-            Regardez le résultat avant de nous parler.
+            Pas de maquette : voici des épisodes réels, produits et publiés automatiquement par la
+            chaîne Magikid. Regardez le résultat avant de nous parler.
           </p>
+          <div className="shows">
+            {FEATURED.map((v) => (
+              <figure className="show" key={v.id}>
+                <div className="show-frame">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${v.id}`}
+                    title={v.title}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <figcaption>{v.title}</figcaption>
+              </figure>
+            ))}
+          </div>
           <div className="live-grid">
             <a className="live yt" href="https://www.youtube.com/@magikid-k3j" target="_blank" rel="noopener">
               <span className="badge"><BrandIcon name="youtube" /></span>
