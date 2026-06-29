@@ -31,8 +31,8 @@ const VALUE = [
 ];
 
 const FEATURED = [
-  { id: "ABVmFOEToqc", title: "Awa et le masque ancestral" },
-  { id: "gD25x8Bt_hY", title: "Saran et l'éclipse solaire" },
+  { id: "nfrSjM3KKVI", title: "Malaika et la source magique" },
+  { id: "_lF3WIF95SM", title: "Adja et l'arbre mystérieux" },
   { id: "oy90GOthijU", title: "Leila retrouve la lumière" },
 ];
 
